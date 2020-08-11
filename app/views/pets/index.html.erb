@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Pets</h1>
+      <%= link_to "Add new pet", new_pet_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="row">
+
+  </div>
+    <% @pets.each  do |pet| %>
+      <div class="col-sm-6 col-md-4">
+        <h2><%= link_to pet.name.capitalize, pet_path(pet) %></h2>
+        <ul>
+          <li> <%= pet.species %></li>
+          <li><%= "#{pet.days_since_found} days ago"%></li>
+        </ul>
+      </div>
+    <% end %>
+</div>
+
+
+
+

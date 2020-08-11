@@ -1,0 +1,17 @@
+<%#= form_for @pet do |f| -%>
+  <%#= f.label :name %>
+  <%#= f.text_field :name %>
+  <%#= f.label :species %>
+  <%#= f.select :species, Pet::SPECIES %>
+  <%#= f.label :found_on %>
+  <%#= f.date_field :found_on %>
+  <%#=f.submit "Submit form"%>
+<%# end %>
+
+
+<%= simple_form_for @pet do |f| -%>
+  <%= f.input :name %>
+  <%= f.input :species, collection: Pet::SPECIES %>
+  <%= f.input :found_on %>
+  <%=f.submit class: 'btn btn-primary'%>
+<% end %>

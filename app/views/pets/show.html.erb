@@ -1,0 +1,17 @@
+<h1>Pets#show</h1>
+<p>Find me in app/views/pets/show.html.erb</p>
+<%= link_to "Update pets info", edit_pet_path(@pet) %>
+<%= link_to "Delete pet from DB",pet_path(@pet),
+ method: :delete,
+ data: {confirm: "Are you sure?"}
+  %>
+
+<div class="pet-card">
+  <h1><%= @pet.name.capitalize%></h1>
+  <ul>
+    <li> <%= @pet.species %></li>
+    <li><%= "#{@pet.days_since_found} days ago"%></li>
+  </ul>
+</div>
+
+<%= link_to "Back to pets list", pets_path %>
